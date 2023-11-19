@@ -11,24 +11,24 @@ function randomText() {
 // Função para fazer "chover"
 function rain() {
     const cloud = document.querySelector(".container .cloud");
-    const div = document.createElement("div");
+    const element = document.createElement("div");
     const left = Math.floor(Math.random() * 310);
     const size = Math.random() * 1.5;
     const duration = Math.random() * 1; 
 
-    div.classList.add("text");
-    cloud.appendChild(div);
-    div.innerText = randomText();
-    div.style.left = left + "px";
-    div.style.fontSize = 0.5 + size + "em";
-    div.style.animationDuration = 1 + duration + "s";
+    element.classList.add("text");
+    cloud.appendChild(element);
+    element.innerText = randomText();
+    element.style.left = left + "px";
+    element.style.fontSize = 0.5 + size + "em";
+    element.style.animationDuration = 1 + duration + "s";
     
     setTimeout(function() {
-        cloud.removeChild(div);
+        cloud.removeChild(element);
     }, 2000);
 }   
 
-// Controlando a quantidade de "chuva"
+// Ativar e controlar a quantidade de "chuva"
 setInterval(function() {
     rain();
 }, 20);
